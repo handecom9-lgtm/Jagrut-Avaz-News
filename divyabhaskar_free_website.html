@@ -1,0 +1,141 @@
+<!--
+Free single-file website "Jagrut Avaz News" — news-style template inspired by modern Indian newspapers.
+Instructions:
+1) Save this file as index.html
+2) Edit the content arrays, images, and contact email below.
+3) To host for FREE: GitHub Pages, Netlify (drag & drop), or Vercel.
+4) This template is styled to feel like a mainstream news portal but is NOT a copy of any existing site and is not affiliated with any trademarked publication.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Jagrut Avaz News</title>
+  <meta name="description" content="Jagrut Avaz News — Local · National · World news.">
+  <style>
+    /* Clean, newsy look with accessible contrast */
+    :root{--accent:#c62828;--muted:#6b7280;--card:#ffffff12;--bg:#f4f6fb}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;background:var(--bg);color:#0b1220}
+    .container{max-width:1150px;margin:22px auto;padding:0 18px}
+    header{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:60px;height:60px;border-radius:6px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:20px}
+    h1{font-size:22px;margin:0}
+    nav ul{display:flex;gap:14px;list-style:none;padding:0;margin:0}
+    nav a{color:var(--muted);text-decoration:none;font-size:15px}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:18px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:16px;border-radius:10px}
+    .main-article{padding:18px;border-radius:12px;display:flex;flex-direction:column;justify-content:flex-end;min-height:300px;background-size:cover;background-position:center;color:white}
+    .meta{color:rgba(255,255,255,0.85);font-size:13px;margin-bottom:8px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+    .tile{display:flex;gap:10px;align-items:flex-start;background:white;padding:10px;border-radius:8px;box-shadow:0 6px 18px rgba(10,12,20,0.04)}
+    .thumb{width:96px;height:64px;border-radius:6px;background:#e6eef6;flex-shrink:0;background-size:cover;background-position:center}
+    .summary{font-size:14px;color:#0b1220}
+    footer{margin:26px 0;color:var(--muted);font-size:13px}
+    @media (max-width:980px){.hero{grid-template-columns:1fr;}.grid{grid-template-columns:repeat(2,1fr)}.thumb{width:84px;height:56px}}
+    @media (max-width:560px){.grid{grid-template-columns:1fr}nav ul{display:none}}
+    .button{background:var(--accent);border:none;color:white;padding:10px 12px;border-radius:8px;cursor:pointer}
+    .byline{color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">JA</div>
+        <div>
+          <h1>Jagrut Avaz News</h1>
+          <div style="color:var(--muted);font-size:13px">Regional · National · World</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">India</a></li>
+          <li><a href="#">Business</a></li>
+          <li><a href="#">Sports</a></li>
+          <li><a href="#">Entertainment</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <article class="card main-article" id="mainArticle" style="background-image:url('https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?auto=format&fit=crop&w=1400&q=60')">
+          <div class="meta">Breaking · Today</div>
+          <h2 style="margin:0 0 8px 0;font-size:24px">Headline: Major news story — concise and reader-focused</h2>
+          <p style="margin:0;color:rgba(255,255,255,0.9);max-width:70%">A short summary for the lead story. Replace with your primary local or national breaking news.</p>
+        </article>
+
+        <div class="card" style="margin-top:14px">
+          <h3 style="margin:0 0 8px 0">Latest</h3>
+          <div class="grid" id="latestGrid">
+            <!-- Tiles injected by JS -->
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Top Reads</h3>
+          <ol style="padding-left:18px;color:var(--muted)">
+            <li>Why civic engagement matters</li>
+            <li>Market watch: Stocks to watch</li>
+            <li>Sports: Match highlights</li>
+          </ol>
+          <div style="margin-top:12px">
+            <button class="button" onclick="alert('Subscribe placeholder')">Subscribe</button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4 style="margin:0 0 10px 0">Contact</h4>
+          <div style="color:var(--muted);font-size:14px">Email: editorial@jagrutavaz.example</div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4 style="margin:0 0 10px 0">Follow</h4>
+          <div style="display:flex;gap:8px">
+            <a href="#" style="text-decoration:none;color:var(--muted)">Facebook</a>
+            <a href="#" style="text-decoration:none;color:var(--muted)">X</a>
+            <a href="#" style="text-decoration:none;color:var(--muted)">Instagram</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Jagrut Avaz News — Template inspired by mainstream news portals; not affiliated with any existing publication.
+    </footer>
+  </div>
+
+  <script>
+    // Replace these sample articles with your own content
+    const articles = [
+      {title:'City council approves new park',summary:'A new public park will be built in the downtown area to increase green space and community events.',img:'https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=800&q=60'},
+      {title:'Startup raises seed funding',summary:'Local startup focusing on renewable tech secures seed investment.',img:'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=60'},
+      {title:'High school robotics wins regional',summary:'Students take top honors in robotics competition.',img:'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=60'},
+      {title:'Monsoon advisory: Heavy rains expected',summary:'Authorities issue an advisory for heavy rains and possible flooding.',img:'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=800&q=60'},
+      {title:'Market: What to watch this week',summary:'Analysts highlight key companies following earnings.',img:'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=800&q=60'},
+      {title:'Community drive: Food donation',summary:'Volunteers collect food for local shelters.',img:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=60'}
+    ];
+
+    function populate() {
+      const grid = document.getElementById('latestGrid');
+      for (let i=0;i<articles.length;i++){
+        const a = articles[i];
+        const div = document.createElement('div');
+        div.className='tile';
+        div.innerHTML = `<div class="thumb" style="background-image:url('${a.img}');"></div><div><div class="summary"><strong>${a.title}</strong><div class="byline">${a.summary}</div></div></div>`;
+        grid.appendChild(div);
+      }
+      document.getElementById('year').textContent = new Date().getFullYear();
+    }
+    populate();
+  </script>
+</body>
+</html>
